@@ -33,6 +33,10 @@ main img {
     display: none;
 }
 
+.content-wrapper img {
+    width: 100%;
+}
+
 .content-wrapper a:link, .content-wrapper a:hover, .content-wrapper a:active, .content-wrapper a:visited {
     color: #8b8b8b;
     

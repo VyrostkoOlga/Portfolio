@@ -125,7 +125,7 @@ a.nav-btn:hover {
     background-color: transparent;
     opacity: 1;
     
-    /*float: right;*/
+    float: right;
     margin-bottom: 0px;
 }
 
