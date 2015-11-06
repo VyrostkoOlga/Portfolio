@@ -1,0 +1,47 @@
+.content-wrapper .header {
+    padding-left: 35%;
+    padding-right: 10%;
+}
+
+.content-wrapper p {
+    color: #8a8a8a;
+    
+    font-family: 'Yeseva One', cursive;
+    letter-spacing: 0px;
+    font-weight: 400;
+    line-height: 1.5em;
+    
+    margin-top: 0px;
+    margin-bottom: 0px;
+    
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    text-align: justify;
+}
+
+main img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.content-wrapper img.colored {
+    display: none;
+}
+
+.content-wrapper a:link, .content-wrapper a:hover, .content-wrapper a:active, .content-wrapper a:visited {
+    color: #8b8b8b;
+    
+    font-family: 'Yeseva One', cursive;
+    letter-spacing: 0px;
+    font-weight: 400;
+    line-height: 1.5em;
+    
+    opacity: 1;
+}
+
+.content-wrapper a:hover {
+    opacity: 0.7;
+}
+
+
