@@ -418,7 +418,7 @@ select {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
     float: left; } }
-@media only screen and (min-width: 40.0625em) {
+@media screen and (min-width: 40.0625em) {
   .medium-push-0 {
     position: relative;
     left: 0;
@@ -781,7 +781,7 @@ select {
     position: relative;
     right: 91.66667%;
     left: auto; } }
-@media only screen and (min-width: 64.0625em) {
+@media screen and (min-width: 64.0625em) {
   .large-push-0 {
     position: relative;
     left: 0;
@@ -1512,7 +1512,7 @@ button::-moz-focus-inner {
       border-color: rgba(255, 255, 255, 0.5); }
     .button-group.stack-for-small > li:first-child button, .button-group.stack-for-small > li:first-child .button {
       border-left: 0; }
-    @media only screen and (max-width: 40em) {
+    @media screen and (max-width: 40em) {
       .button-group.stack-for-small > li {
         display: block;
         margin: 0;
