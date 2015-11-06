@@ -1,4 +1,4 @@
-main p {
+.content-wrapper p {
     margin: 0px;
     padding: 0px;
     
@@ -10,7 +10,7 @@ main p {
     font-weight: 400;
 }
 
-main a:link, main a:hover, main a:active, main a:visited {
+.content-wrapper a:link, main a:hover, main a:active, main a:visited {
     margin: 0px;
     padding: 0px;
     
@@ -21,18 +21,20 @@ main a:link, main a:hover, main a:active, main a:visited {
     line-height: 1.5em;
     opacity: 1;
     font-weight: 400;
+    
+    text-decoration: underline;
 }
 
-main a:hover {
+.content-wrapper a:hover {
     opacity: 0.8;
 }
 
-main ul {
+.content-wrapper ul {
     padding-top: 5px;
     padding-bottom: 0px;
 }
 
-main ul li {
+.content-wrapper ul li {
     color: #8a8a8a;
     
     font-family: 'Noto Serif', serif;
@@ -42,7 +44,7 @@ main ul li {
     font-weight: 400;
 }
 
-main .header {
+.content-wrapper .header {
     background-color: #525252; 
     /*background-color: #CFCFCF;*/
     border-radius: 4px 8px 8px 4px;
@@ -50,7 +52,7 @@ main .header {
     font-weight: 700;
 }
 
-main .header p {
+.content-wrapper .header p {
     color: #CFCFCF;
     font-weight: 400;
     

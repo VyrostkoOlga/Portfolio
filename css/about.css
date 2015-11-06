@@ -3,6 +3,10 @@
     padding-right: 10%;
 }
 
+a:link, a:visited, a:active, a:hover {
+    text-decoration: underline;
+}
+
 .content-wrapper p {
     color: #8a8a8a;
     
