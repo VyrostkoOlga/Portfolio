@@ -9,7 +9,7 @@ showArticle = function( event ) {
     var textBlock = parent.nextElementSibling;
     if ( textBlock == undefined ) {
         textBlock = parent.nextSibling;
-        while ( textBlock != null && textBlock != undefined && textBlock.id != "news-content" ) {
+        while ( textBlock != null && textBlock != undefined && textBlock.className != undefined && textBlock.className.indexOf( "news-content" ) != -1 ) {
             console.log( textBlock.className );
             textBlock = textBlock.nextSibling;
         }
@@ -32,7 +32,7 @@ hideArticle = function( event ) {
     var textBlock = parent.nextElementSibling;
     if ( textBlock == undefined ) {
         textBlock = parent.nextSibling;
-        while ( textBlock != null && textBlock != undefined && textBlock.id != "news-content" ) {
+        while ( textBlock != null && textBlock != undefined && textBlock.className != undefined && textBlock.className.indexOf( "news-content" ) != -1 ) {
             console.log( textBlock.className );
             textBlock = textBlock.nextSibling;
         }
