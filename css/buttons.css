@@ -48,26 +48,6 @@
     opacity: 1.0;
 }
 
-/*
-@media screen and ( max-width: 1040px ) and ( min-width: 610px ) {
-    .large-4 {
-        margin-left: 25%;
-        margin-right: 25%;
-        width: 50%;
-        margin-bottom: 20px;
-    }
-}
-
-@media screen and ( max-width: 609px ) and ( min-width: 401px ) {
-    .large-4 {
-        margin-left: 15%;
-        margin-right: 15%;
-        width: 70%;
-        margin-bottom: 20px;
-    }
-}
-*/
-
 a.nav-btn:link, a.nav-btn:active, a.nav-btn:visited {
     opacity: 1.0;
 }
@@ -80,7 +60,7 @@ a.nav-btn:hover {
     visibility: hidden;
     width: 100%;
     
-    font-family: 'Roboto Mono', ;
+    font-family: 'Noto Serif', sans-serif;
     font-weight: 600;
     font-size: 1.2em;
     

@@ -1,7 +1,7 @@
 body {
     background-color: #525252;
     /* font-size: 30px; */
-    font-family: 'Roboto Mono',;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     letter-spacing: 0px;
     text-transform: uppercase;
     color: #252525;
@@ -58,7 +58,7 @@ main {
 header h1 {
     font-weight: 500;
     /* font-size: 30px; */
-    font-family: 'Roboto Mono',;
+    font-family: 'Noto Serif', sans-serif;
     letter-spacing: 0px;
     text-transform: uppercase;
     color: #252525;
@@ -70,7 +70,7 @@ header h1 {
 header h5 {
     font-weight: 500;
     /* font-size: 30px; */
-    font-family: 'Roboto Mono',;
+    font-family: 'Noto Serif', sans-serif;
     letter-spacing: 0px;
     text-transform: uppercase;
     color: #252525;

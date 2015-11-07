@@ -50,6 +50,7 @@
     border-radius: 4px 8px 8px 4px;
     
     font-weight: 700;
+    min-height: 30px;
 }
 
 .content-wrapper .header p {

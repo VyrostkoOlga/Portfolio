@@ -1,3 +1,8 @@
+register = function( ) {
+    makeLoginInvisible( );
+    return false;
+}
+
 showNameTitle = function( ) {
     document.getElementById('name-header').style.display = "inline-block";
     document.getElementById('page-header').style.display = "none";

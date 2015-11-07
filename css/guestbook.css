@@ -14,14 +14,14 @@
     
     border: 10px solid #525252;
     
-    font-family: 'Noto Serif', cursive;
+    font-family: "Noto Serif", sans-serif;
     
     margin-bottom: 3%;
     padding-top: 3%;
 }
 
 .guestbook-page textarea, .guestbook-page p {
-    font-family: 'Noto Serif', cursive;
+    font-family: "Noto Serif", sans-serif;
 }
 
 #add-page {
@@ -70,11 +70,14 @@
 .first-content-row p {
     color: #525252;
     
-    font-family: 'Noto Serif', cursive;
-    letter-spacing: 0px;
-    text-align: justify;
+    font-family: "Noto Serif", sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: 500;
 }
 
 .first-content-row a:link, .first-content-row a:visited, .first-content-row a:active, .first-content-row a:hover {
     color: #525252;
+    font-family: "Noto Serif", sans-serif;
 }
