@@ -20,3 +20,39 @@
 .grid .image-wrapper {
     margin-bottom: 5px;
 }
+
+.image-wrapper .button {
+    opacity: 1;
+    
+    position: relative;
+    bottom: 20px;
+}
+
+#full-view-modal {
+    overflow: scroll;
+}
+
+#full-view-modal .modal-wrapper {
+	position: relative;
+	margin: 3% 15%;
+    margin-bottom: 10%;
+    text-align: center;
+    max-width: 850px;
+    
+	border-radius: 10px;
+	background: #FFF;
+	background: -moz-linear-gradient(#FFF, #999);
+	background: -webkit-linear-gradient(#FFF, #999);
+	background: -o-linear-gradient(#FFF, #999);
+}
+
+#full-view-modal .modal-wrapper img {
+    max-height: 550px;
+    width: auto;
+}
+
+#full-view-modal p {
+    font-family: "Noto Serif", sans-serif;
+    margin-top: 10px;
+    opacity: 0.7;
+}
