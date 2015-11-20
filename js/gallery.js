@@ -8,78 +8,116 @@ endLoad = function( event ) {
     while ( loader.className != 'loader' ) {
         loader = loader.nextSibling;
     }
-    console.log( loader );
     loader.style.display = "none";
-    return false;
 }
 
 window.onload = function( ) {
     var modal = document.getElementById( 'full-view-modal' );
-    var total = Number(document.getElementById( 'gallery-wrapper' ).getAttribute( 'total' ) );
-    console.log( total );
+    var total = document.getElementById( 'gallery-wrapper' ).getAttribute( 'total' );
     
-    window.addEventListener("keyup", function(e) { 
-        if (e.keyCode == 27) { 
-            document.getElementById('full-view-modal').style.display = 'none';
-            document.getElementById( 'help-modal' ).style.display = 'none';
-        }
-        else if ( e.keyCode == 39 ) {
-            var imageName = Number(document.getElementById('full-view-modal').getAttribute( 'currentImage' ) );
-            if ( imageName < total ) {
-                imageName++;
-                document.getElementById('full-view-modal').setAttribute( 'currentImage', imageName );
-            }
-            updateImage( imageName );
-        }
-        else if ( e.keyCode == 37 ) {
-            var imageName = Number(document.getElementById('full-view-modal').getAttribute( 'currentImage' ) );
-            if ( imageName > 1 ) {
-                imageName--;
-                document.getElementById('full-view-modal').setAttribute( 'currentImage', imageName );
-            }
-            updateImage( imageName );
-        }
-        else if ( e.keyCode == 112 ) {
-            document.getElementById( 'help-modal' ).style.display = 'block';
-            document.getElementById( 'help-modal' ).style.opacity = '1';
-        }
-        console.log( e.keyCode );
-        return false;
-    });
-                           
     showImage = function( event ) {
         var btn = event.target;
         if ( btn == undefined ) {
             btn = event.srcElement;
         }
-    
-        var imageName = btn.getAttribute('image');
-        document.getElementById('full-view-modal').setAttribute( 'currentImage', imageName );
         
-        imageName = Number( imageName ); 
+        imageName = btn.getAttribute( 'image' );
         updateImage( imageName );
-        return false;
-    };
+    }
     
     updateImage = function( imageName ) {
-        var imageWrapper = document.getElementById( 'full-view-image' );
-        imageWrapper.src = "../resources/Gallery/" + imageName + ".jpg";
+        var curModal = document.getElementById( 'full-view-modal?image=' + imageName );
+        if ( curModal != null )
+            return;
         
-        if ( imageName < total - 1 ) {
-            var imageWrapperUndisp = document.getElementById( 'undisplay-full-view-image' );
-            imageWrapperUndisp.src = "../resources/Gallery/" + ( imageName + 1 ) + ".jpg";
+        var nModal = modal.cloneNode( true );
+        nModal.id = "full-view-modal?image=" + imageName;
+        
+        var curImage = findNodeByClassName( nModal, 'image-full-view', true );
+        if ( curImage != null ) {
+            curImage.src = "../resources/Gallery/" + imageName + ".jpg";
+            curImage.id = "full-view-image-" + imageName;
         }
-
-        document.getElementById('full-view-modal').style.display = 'block';
+        
+        var left = findNodeByClassName( nModal, 'left-arrow', true );
+        if ( left != null ) {
+            //imageName = (Number) imageName;
+            if ( imageName > 1 ) {
+                //left.onclick = prevImage;
+                left.href = "#full-view-modal?image=" + ( imageName - 1);
+                left.style.visibility = 'visible';
+            }
+            else {
+                left.style.visibility = 'hidden';
+            }
+        }
+        
+        var nextImage = findNodeByClassName( nModal, 'undisplay-image-full-view', true );
+        if ( nextImage != null ) {
+            var right = findNodeByClassName( nModal, 'right-arrow', true );
+            imageName = Number( imageName );
+            if ( imageName < total - 1 ) {
+                var nextName = imageName + 1;
+                console.log( nextName );
+                nextImage.src = "../resources/Gallery/" + nextName + ".jpg";
+                nextImage.id = "full-view-image-" + nextName;
+                
+                if ( right != null ) {
+                    right.href = "#full-view-modal?image=" + nextName;
+                    right.style.visibility = 'visible';
+                }
+            }
+            else {
+                right.style.visibility = 'hidden';
+            }
+        }
+        document.body.appendChild( nModal );
     }
-
-    makeFullViewInvisible = function( ) {
-        document.getElementById( 'full-view-modal' ).style.display = 'none';
-        return false;
-    }   
     
-    makeHelpInvisible = function( ) {
-        document.getElementById( 'help-modal' ).style.display = 'none';
-        return false;
+    var hash = window.location.hash;
+    var idx = hash.indexOf( '?image=' );
+    if ( idx != -1 ) {
+        var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
+        updateImage( imageName );
+        window.location.href = window.location.href;
     }
+    
+    nextImage = function( ) {
+        var hash = window.location.hash;
+        var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
+            
+        imageName = Number( imageName );
+        if ( imageName < total ) {
+            imageName++;
+            updateImage( imageName );
+            window.location.hash = "#full-view-modal?image=" + imageName;
+        }
+    }
+    
+    prevImage = function( ) {
+        var hash = window.location.hash;
+        var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
+            
+        imageName = Number( imageName );
+        if ( imageName > 1 ) {
+            imageName--;
+            updateImage( imageName );
+            window.location.hash = "#full-view-modal?image=" + imageName;
+        }
+    }
+    
+    window.addEventListener( 'keydown', function( event ) {
+        if ( event.keyCode == 39 ) {
+            nextImage( );
+        }
+        else if ( event.keyCode == 37 ) {
+            prevImage( );
+        }
+        else if ( event.keyCode == 27 ) {
+            window.location.hash = "#";
+        }
+        else if ( event.keyCode == 112 ) {
+            document.location.hash = "#help-modal";
+        }
+    });
 }
