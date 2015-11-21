@@ -28,11 +28,7 @@
     bottom: 20px;
 }
 
-#full-view-modal {
-    overflow: scroll;
-}
-
-#full-view-modal .modal-wrapper {
+.modal .modal-wrapper {
 	position: relative;
 	margin: 3% 15%;
     margin-bottom: 10%;
@@ -46,19 +42,94 @@
 	background: -o-linear-gradient(#FFF, #999);
 }
 
-#full-view-modal .modal-wrapper img {
+.modal .modal-wrapper img {
     max-height: 550px;
     width: auto;
 }
 
-#full-view-modal p {
+.modal .full-view-image-wrapper {
+}
+
+.modal p {
     font-family: "Noto Serif", sans-serif;
     margin-top: 10px;
     opacity: 0.7;
 }
 
-#full-view-modal {
+.modal {
     overflow: scroll;
+}
+
+.modal:target {
+    display: inline-block;
+    opacity: 1;
+}
+
+.modal .arrow {
+	color: #FFFFFF;
+	line-height: 25px;
+	/*position: absolute;*/
+	text-align: center;
+    
+    width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+    
+    margin-top: 35%;
+}
+
+.modal .make-background {
+    color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	text-align: center;
+    
+    top: 0px;
+    right: 35px;
+    opacity: 0.7;
+    
+    padding: 1px;
+    
+    width: 24px;
+    height: 25px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.modal .make-background:hover {
+    background: #00d9ff;
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+.modal .left-arrow {
+    float: left;
+}
+
+.modal .right-arrow {
+    float: right;
+}
+
+.modal .arrow:hover { 
+    background: #00d9ff;
+    cursor: pointer;
+}
+
+.undisplay-image-full-view {
+    display: none;
 }
 
 #help-modal .modal-wrapper {
@@ -79,8 +150,4 @@
     font-family: "Noto Serif", sans-serif;
     margin-top: 10px;
     opacity: 0.7;
-}
-
-#full-view-modal #undisplay-full-view-image {
-    display: none;
 }

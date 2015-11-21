@@ -28,6 +28,8 @@ window.onload = function( ) {
     updateImage = function( imageName ) {
         var curModal = document.getElementById( 'full-view-modal?image=' + imageName );
         if ( curModal != null ) {
+            curModal.style.display = 'block';
+            curModal.style.opacity = '1';
             return;
         }
         
@@ -70,6 +72,8 @@ window.onload = function( ) {
                 right.style.visibility = 'hidden';
             }
         }
+        nModal.style.display = 'block';
+        nModal.style.opacity = '1';
         document.body.appendChild( nModal );
     }
     
@@ -86,12 +90,18 @@ window.onload = function( ) {
         var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
         
         var curModal = document.getElementById( 'full-view-modal?image=' + imageName ); 
+        curModal.style.display = 'none';
+        curModal.style.opacity = '0';
             
         imageName = Number( imageName );
         if ( imageName < total ) {
             imageName++;
             updateImage( imageName );
             window.location.hash = "#full-view-modal?image=" + imageName;
+        }
+        else {
+            curModal.style.display = 'block';
+            curModal.style.opacity = '1';
         }
     }
     
@@ -100,6 +110,8 @@ window.onload = function( ) {
         var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
         
         var curModal = document.getElementById( 'full-view-modal?image=' + imageName ); 
+        curModal.style.display = 'none';
+        curModal.style.opacity = '0';
         
         imageName = Number( imageName );
         if ( imageName > 1 ) {
@@ -107,9 +119,25 @@ window.onload = function( ) {
             updateImage( imageName );
             window.location.hash = "#full-view-modal?image=" + imageName;
         }
+        else {
+            curModal.style.display = 'block';
+            curModal.style.opacity = '1';
+        }
     }
     
     closeModal = function(  event ) {
+        var trg = event.target;
+        if ( trg == undefined ) {
+            trg = event.srcElement;
+        }
+        
+        console.log( trg );
+        
+        var modal = findParentByClass( trg, 'modal', true );
+        if ( modal != null ) {
+            modal.style.display = 'none';
+            modal.style.opacity = 0;
+        }
     }
     
     keydownCallback = function( event ) {
@@ -125,9 +153,6 @@ window.onload = function( ) {
         else if ( event.keyCode == 112 ) {
             document.location.hash = "#help-modal";
         }
-    }
-    
-    popstateCallback = function( event ) {
     }
     
     setTheme = function( event ) {
