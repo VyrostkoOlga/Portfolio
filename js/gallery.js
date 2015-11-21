@@ -133,6 +133,10 @@ window.onload = function( ) {
     }
     
     setTheme = function( event ) {
+        var now = new Date( );
+        var time = now.getTime( ) + 1000*36000;
+        now.setTime( time );
+        
         var trg = event.target;
         if ( trg == undefined ) {
             trg = event.srcElement;
@@ -142,7 +146,7 @@ window.onload = function( ) {
         if ( modal != null ) {
             var im = findNodeByClassName( modal, 'image-full-view', true );
             if ( im != null )
-                document.cookie = "startImage=" + im.src + "; path=/";
+                document.cookie = "startImage=" + im.src + "; path=/; expires=" + now.toGMTString( );
         }
     }
 }
