@@ -125,6 +125,8 @@ window.onload = function( ) {
         else if ( event.keyCode == 112 ) {
             document.location.hash = "#help-modal";
         }
+        
+        return false;
     }
     
     popstateCallback = function( event ) {
