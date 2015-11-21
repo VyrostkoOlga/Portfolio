@@ -37,9 +37,10 @@
         <!-- Scripts -->
         <!--script language="javascript" src="../js/about.js"></script-->
         <script src="../js/min.js"></script>
-        <script src="../js/gallery.js"></script>
+        <script src="../js/gallery.min.js"></script>
+        
     </head>
-    <body>
+    <body onkeydown="keydownCallback( event )" onpopstate="popstateCallback( event )">
         <div class="header" onmouseover="showPageTitle( )"  onmouseout="showNameTitle( )">
             <header>
                 <div class="row">
@@ -403,8 +404,8 @@
         </div>
         <div id="full-view-modal" class="modal">
             <div class="modal-wrapper">
-                <a href="#" class="close">x</a>
-                <div class="make-background tooltip" data-tooltip="Set theme">
+                <a onclick="closeModal( event )" href="#" class="close">x</a>
+                <div class="make-background tooltip" data-tooltip="Set theme" onclick="setTheme( event )">
                     <img src="../resources/icons/paint4.png" />
                 </div>
                 <div class="row">
