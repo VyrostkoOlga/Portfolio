@@ -174,6 +174,8 @@ window.onload = function( ) {
             var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
             updateImage( imageName );
         }
+        
+        console.log( 'test' );
     }
     
     setTheme = function( event ) {
