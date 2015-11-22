@@ -158,6 +158,10 @@ window.onload = function( ) {
         }
     }
     
+    popstateCallback = function( event ) {
+        window.location.reload( );
+    }
+    
     setTheme = function( event ) {
         var now = new Date( );
         var time = now.getTime( ) + 1000*36000;
