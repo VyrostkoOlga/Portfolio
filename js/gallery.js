@@ -134,6 +134,19 @@ window.onload = function( ) {
     }
     
     popstateCallback = function( event ) {
+        var hash = document.location.hash;
+        if ( hash.indexOf( 'log-in' ) != -1 ) {
+            makeLoginVisible( );
+            makeHelpInvisible( );
+        }
+        else if ( hash.indexOf( 'help' ) != -1 ) {
+            makeHelpVisible( );
+            makeLoginInvisible( );
+        }
+        else {
+            makeLoginInvisible( );
+            makeHelpInvisible( );
+        }
     }
     
     setTheme = function( event ) {
