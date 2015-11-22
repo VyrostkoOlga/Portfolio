@@ -164,6 +164,7 @@ window.onload = function( ) {
         if ( idx != -1 ) {
             var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
             updateImage( imageName );
+            console.log( imageName );
             window.location.href = window.location.href;
         }
     }
