@@ -159,13 +159,20 @@ window.onload = function( ) {
     }
     
     popstateCallback = function( event ) {
+        var modal;
+        for ( var i=0; i<total; i++ ) {
+            modal = document.getElementById( 'full-view-modal?image=' + i );
+            if ( modal != undefined && modal != null ) {
+                modal.style.display = 'none';
+                modal.style.opacity = 0;
+            }
+        }
+        
         var hash = window.location.hash;
         var idx = hash.indexOf( '?image=' );
         if ( idx != -1 ) {
             var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
             updateImage( imageName );
-            console.log( imageName );
-            window.location.href = window.location.href;
         }
     }
     
