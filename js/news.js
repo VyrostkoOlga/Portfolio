@@ -39,3 +39,11 @@ hideArticle = function( event ) {
     findNodeByClassName( parent, "hide-article-btn", true ).style.display = "none";
     findNodeByClassName( parent, "show-article-btn", true ).style.display = "inline-block";
 }
+
+keydownCallback = function( event ) {
+    if ( event.keyCode == 27 ) {
+        window.location.hash = "#";
+        makeLoginInvisible( );
+    }
+    return false;
+}

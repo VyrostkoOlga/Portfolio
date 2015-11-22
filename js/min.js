@@ -39,16 +39,37 @@ hideMenu = function( ) {
     return false;
 }
 
+keydownCallbackMin = function( event ) {
+    if ( event.keyCode == 27 ) {
+        window.location.hash = "#";
+        makeLoginInvisible( );
+    }
+    return false;
+}
+
 makeLoginVisible = function( ) {
     var modal = document.getElementById( "log-in-modal" );
     modal.style.display = "block";
+    modal.style.opacity = 1;
 }
 
 makeLoginInvisible = function( ) {
     var modal = document.getElementById( "log-in-modal" );
     modal.style.display = "none";
+    modal.style.opacity = 0;
 }
 
+makeHelpInvisible = function( ) {
+    var modal = document.getElementById( "help-modal" );
+    modal.style.display = "none";
+    modal.style.opacity = 0;
+}
+
+makeHelpVisible = function( ) {
+    var modal = document.getElementById( "help-modal" );
+    modal.style.display = "block";
+    modal.style.opacity = 1;
+}
 
 /* Функции для поиска элементов */
 findNode = function( parent, name, rec ) {

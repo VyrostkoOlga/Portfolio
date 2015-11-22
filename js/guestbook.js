@@ -32,3 +32,11 @@ sendReview = function( ) {
     form.style.display = "none";
     document.getElementById( "add-page-action" ).style.display = "inline-block";
 }
+
+keydownCallback = function( event ) {
+    if ( event.keyCode == 27 ) {
+        window.location.hash = "#";
+        makeLoginInvisible( );
+    }
+    return false;
+}

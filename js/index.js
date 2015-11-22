@@ -14,4 +14,12 @@ window.onload = function( ) {
     if ( imagePath != undefined ) {
         document.getElementById( 'hero' ).style.backgroundImage = "url(" + imagePath + " )";
     }
+    
+    keydownCallback = function( event ) {
+        if ( event.keyCode == 27 ) {
+            window.location.hash = "#";
+            makeLoginInvisible( );
+        }
+        return false;
+    }
 }

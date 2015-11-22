@@ -149,9 +149,12 @@ window.onload = function( ) {
         }
         else if ( event.keyCode == 27 ) {
             window.location.hash = "#";
+            makeLoginInvisible( );
+            makeHelpInvisible( );
         }
         else if ( event.keyCode == 112 ) {
             document.location.hash = "#help-modal";
+            makeHelpVisible( );
         }
     }
     

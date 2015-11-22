@@ -376,64 +376,91 @@
             </footer>
         </div>
         <div id="log-in-modal" class="modal">
-            <div class="modal-wrapper">
-                <a onclick="makeLoginInvisible( )" href="#" class="close">x</a>
-                <form action="#">
-                    <div class="row">
-                        <div class="twelve small-12 medium-12 large-12 columns">
-                            <input name="login" id="login" type="text" placeholder="Your email or login" required />
-                        </div>
+            <div class="row modal-wrapper">
+                <div class="row">
+                    <div class="twelve small-12 medium-12 large-12 columns">
+                        <a onclick="makeLoginInvisible( )" href="#" class="close tool">
+                            <img src="../resources/icons/close33.png" />
+                        </a>
                     </div>
-                    <div class="row">
-                        <div class="twelve small-12 medium-12 large-12 columns">
-                            <input name="password" id="password" type="password" placeholder="Password" required/>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="twelve small-12 medium-12 large-12 columns">
+                        <form action="#">
+                            <div class="row">
+                                <div class="twelve small-12 medium-12 large-12 columns">
+                                    <input name="login" id="login" type="text" placeholder="Your email or login" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve small-12 medium-12 large-12 columns">
+                                    <input name="password" id="password" type="password" placeholder="Password" required/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve small-12 medium-12 large-12 columns">
+                                    <input onclick="makeLoginInvisible( )" type="submit" value="Log in" id="log-in-modal-submit" class="button small"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve small-12 medium-12 large-12 columns">
+                                    <a onclick="makeLoginInvisible( )" href="registration.html" id="log-in-modal-register" class="button small">Register</a>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="row">
-                        <div class="twelve small-12 medium-12 large-12 columns">
-                            <input onclick="makeLoginInvisible( )" type="submit" value="Log in" id="log-in-modal-submit" class="button small"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="twelve small-12 medium-12 large-12 columns">
-                            <a onclick="makeLoginInvisible( )" href="../html/registration.html" id="log-in-modal-register" class="button small">Register</a>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
         <div id="full-view-modal" class="modal">
-            <div class="modal-wrapper">
-                <a onclick="closeModal( event )" href="#" class="close">x</a>
-                <div class="make-background tooltip" data-tooltip="Set theme" onclick="setTheme( event )">
-                    <img src="../resources/icons/paint4.png" />
+            <div class="row modal-wrapper">
+                <div class="row">
+                    <div class="twelve small-12 medium-12 large-12 columns">
+                        <a onclick="closeModal( event )" href="#" class="close tool">
+                            <img src="../resources/icons/close33.png" />
+                        </a>
+                        <a class="make-background tooltip tool" data-tooltip="Set theme" onclick="setTheme( event )">
+                            <img src="../resources/icons/paintbrush12.png" />
+                        </a>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="twelve small-12 medium-12 large-12">
+                    <div class="twelve small-12 medium-12 large-12 columns">
                         <div class="full-view-image-wrapper">
-                            <div class="arrow left-arrow" onclick="prevImage( )">
-                                <img src="../resources/icons/back28.png" />
-                            </div>
                             <img id="full-view-image" class="image-full-view" onload="endLoad( event )" src="" alt="" />
                             <img class="loader" src="../resources/icons/loading.gif" />
                             <img id="undisplay-full-view-image" class="undisplay-image-full-view" src="" alt="Loading..." />
-                            <div class="arrow right-arrow" onclick="nextImage( )">
-                                <img src="../resources/icons/right127.png" />
-                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row modal-footer-row">
+                    <div class="twelve small-12 medium-12 large-12 columns">
+                        <a class="arrow left-arrow tool" onclick="prevImage( )">
+                            <img src="../resources/icons/back28.png" />
+                        </a>
+                        <a class="arrow right-arrow tool" onclick="nextImage( )">
+                            <img src="../resources/icons/right127.png" />
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         <div id="help-modal" class="modal">
-            <div class="modal-wrapper">
-                <a onclick="makeHelpInvisible( )" href="#" class="close">x</a>
+            <div class="row modal-wrapper">
+                <div class="row">
+                    <div class="twelve small-12 medium-12 large-12 columns">
+                        <a onclick="makeHelpInvisible( )" href="#" class="close tool">
+                            <img src="../resources/icons/close33.png" />
+                        </a>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="twelve small-12 medium-12 large-12">
                         <p>Click "Full view" button to see the photo in detail</p>
                         <p>Press esc or "x" button to close full view</p>
                         <p>Press left arrow to see next photo</p>
                         <p>Press right arrow to see previous photo</p>
+                        <p>Press "makeTheme" button to change background of home page</p>
                     </div>
                 </div>
             </div>

@@ -39,7 +39,7 @@
         <script src="../js/news.js"></script>
         <script src="../js/min.js"></script>
     </head>
-    <body>
+    <body onkeydown="keydownCallbackMin( event )">
         <div class="header" onmouseover="showPageTitle( )"  onmouseout="showNameTitle( )">
             <header id="header">
                 <div class="row">
@@ -201,30 +201,40 @@
             </footer>
         </div>
         <div id="log-in-modal" class="modal">
-            <div class="modal-wrapper">
-                <a onclick="makeLoginInvisible( )" href="#" class="close">x</a>
-                <form action="#">
-                    <div class="row">
-                        <div class="twelve small-12 medium-12 large-12 columns">
-                            <input name="login" id="login" type="text" placeholder="Your email or login" required />
-                        </div>
+            <div class="row modal-wrapper">
+                <div class="row">
+                    <div class="twelve small-12 medium-12 large-12 columns">
+                        <a onclick="makeLoginInvisible( )" href="#" class="close tool">
+                            <img src="../resources/icons/close33.png" />
+                        </a>
                     </div>
-                    <div class="row">
-                        <div class="twelve small-12 medium-12 large-12 columns">
-                            <input name="password" id="password" type="password" placeholder="Password" required/>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="twelve small-12 medium-12 large-12 columns">
+                        <form action="#">
+                            <div class="row">
+                                <div class="twelve small-12 medium-12 large-12 columns">
+                                    <input name="login" id="login" type="text" placeholder="Your email or login" required />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve small-12 medium-12 large-12 columns">
+                                    <input name="password" id="password" type="password" placeholder="Password" required/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve small-12 medium-12 large-12 columns">
+                                    <input onclick="makeLoginInvisible( )" type="submit" value="Log in" id="log-in-modal-submit" class="button small"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="twelve small-12 medium-12 large-12 columns">
+                                    <a onclick="makeLoginInvisible( )" href="registration.html" id="log-in-modal-register" class="button small">Register</a>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="row">
-                        <div class="twelve small-12 medium-12 large-12 columns">
-                            <input onclick="makeLoginInvisible( )" type="submit" value="Log in" id="log-in-modal-submit" class="button small"/>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="twelve small-12 medium-12 large-12 columns">
-                            <a onclick="makeLoginInvisible( )" href="../html/registration.html" id="log-in-modal-register" class="button small">Register</a>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </body>
