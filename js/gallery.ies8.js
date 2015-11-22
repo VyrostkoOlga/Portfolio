@@ -159,7 +159,13 @@ window.onload = function( ) {
     }
     
     popstateCallback = function( event ) {
-        window.location.reload( );
+        var hash = window.location.hash;
+        var idx = hash.indexOf( '?image=' );
+        if ( idx != -1 ) {
+            var imageName = hash.substring( hash.indexOf( '?image=' ) + 7, hash.length );
+            updateImage( imageName );
+            window.location.href = window.location.href;
+        }
     }
     
     setTheme = function( event ) {
